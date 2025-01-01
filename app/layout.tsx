@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Domine, Nunito } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const domine = Domine({
+  variable: "--font-domine",
+  subsets: ["latin"],
+});
+
+const nunito = Nunito({
   subsets: ["latin"],
 });
 
@@ -18,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased custom-scrollbar`}>
+      <body
+        className={`${nunito.className} ${domine.variable} antialiased custom-scrollbar`}
+      >
         {children}
       </body>
     </html>
