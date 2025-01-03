@@ -14,8 +14,10 @@ export default function Home() {
   return (
     <SectionProvider>
       <main className="flex">
-        {/* <Header /> */}
-        <div className="flex-1">
+        {/* These two divs are for fade effect while scrolling */}
+        {/* <div className="py-10 fixed top-0 w-full z-50 bg-gradient-to-b from-background to-transparent"></div>
+        <div className="py-10 fixed bottom-0 w-full z-50 bg-gradient-to-t from-background to-transparent"></div> */}
+        <div className="flex-1 overflow-hidden">
           <Hero />
           <Projects />
           <Skills />
