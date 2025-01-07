@@ -9,6 +9,7 @@ import Skills from "@/components/Skills";
 import StickyNavigation from "@/components/StickyNavigation";
 import SectionProvider from "@/context/SectionContext";
 import Header from "@/components/Header";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         {/* These two divs are for fade effect while scrolling */}
         {/* <div className="py-10 fixed top-0 w-full z-50 bg-gradient-to-b from-background to-transparent"></div>
         <div className="py-10 fixed bottom-0 w-full z-50 bg-gradient-to-t from-background to-transparent"></div> */}
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1">
           <Hero />
           <Projects />
           <Skills />

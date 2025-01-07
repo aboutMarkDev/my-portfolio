@@ -1,6 +1,6 @@
 "use client";
 
-import { about, briefIntroduction } from "@/constants";
+import { aboutMe, bio, role } from "@/constants";
 import { useSectionContext } from "@/context/SectionContext";
 import { FlipWords } from "./ui/flip-words";
 import { Button } from "./ui/button";
@@ -8,53 +8,42 @@ import { Button } from "./ui/button";
 export default function Hero() {
   const { sectionRefs } = useSectionContext();
 
-  const words = [
-    "Software Engineer",
-    "Full Stack Web Developer",
-    "Tech Enthusiast",
-  ];
-
   return (
     <section
-      className="h-screen flex items-center max-md:flex-col relative"
+      className="min-h-screen flex max-lg:flex-col max-lg:items-center justify-between bg-[#001712] bg-grid-white/[0.1] relative"
       id="hero"
       ref={sectionRefs[0]}
     >
-      <div className="text-center sticky top-0 md:hidden border-b w-full shadow-md backdrop-blur py-3 z-50">
-        Hero Section
-      </div>
+      {/* Radial gradient faded look */}
+      <div className="bg-faded" />
 
-      <div className="w-full max-w-screen-lg px-10 py-5 space-y-5 overflow-hidden flex-1 flex flex-col justify-center items-start">
-        <div className="font-domine text-primary tracking-wide space-y-2">
-          <h1 className="text-4xl md:text-6xl font-bold after:content-[',']">
-            Mark Laurence Guyada
-          </h1>
+      <div className="hero-intro-container">
+        <div className="overflow-hidden space-y-2">
+          <h1 className="dev-name">Mark Laurence Guyada</h1>
           <FlipWords
-            words={words}
-            className="text-lg md:text-3xl font-medium text-primary"
+            words={role}
+            className="text-foreground text-xl lg:text-4xl font-bold -ml-2"
           />
         </div>
-        <p className="text-sm md:text-lg text-secondary tracking-tight text-pretty">
-          {briefIntroduction}
-        </p>
-        <Button
-          size="lg"
-          className="rounded-lg font-medium text-md hover:bg-secondary transition-colors duration-200"
-        >
-          Let's build something
+
+        <h3 className="bio">{bio}</h3>
+
+        <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
+          View my Resume
         </Button>
       </div>
 
-      {/* <div className="w-full max-w-3xl px-10 py-5 overflow-hidden space-y-3">
-        {about.map((item, i) => (
+      <div className="about-container">
+        <header className="sticky-header">About Me</header>
+        {aboutMe.map((about, i) => (
           <div
             key={i}
-            className="font-light text-sm md:text-lg indent-3 text-primary"
+            className="px-5 py-3 indent-2 max-lg:text-sm text-pretty"
           >
-            {item}
+            {about}
           </div>
         ))}
-      </div> */}
+      </div>
     </section>
   );
 }

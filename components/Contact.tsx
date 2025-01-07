@@ -4,48 +4,55 @@ import React from "react";
 import { useSectionContext } from "@/context/SectionContext";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import { Button } from "./ui/button";
-
-const words = [
-  {
-    text: "Let's",
-  },
-  {
-    text: "start",
-  },
-  {
-    text: "building",
-  },
-  {
-    text: "awesome",
-  },
-  {
-    text: "apps!",
-    className: "text-primary",
-  },
-];
-
+import { Send } from "lucide-react";
+import Link from "next/link";
+import { contactDesc } from "@/constants";
 
 export default function Contact() {
   const { sectionRefs } = useSectionContext();
 
-
+  const contactHeading = [
+    {
+      text: "Let's",
+    },
+    {
+      text: "build",
+    },
+    {
+      text: "something",
+    },
+    {
+      text: "great",
+      className: "text-emerald-400",
+    },
+    {
+      text: "together!",
+      className: "text-emerald-400",
+    },
+  ];
 
   return (
-    <section className="py-8 space-y-10" id="contact" ref={sectionRefs[3]}>
-      <div className="w-full max-w-screen-2xl mx-auto px-5 flex flex-col items-center justify-center">
-        <h3 className="text-lg">The road to success starts here.</h3>
+    <section
+      className="py-8 space-y-8 relative min-h-[36rem] flex items-center justify-center bg-dot-white/[0.2]"
+      id="contact"
+      ref={sectionRefs[3]}
+    >
+      {/* Radial gradient faded look */}
+      <div className="bg-faded" />
 
-        <TypewriterEffectSmooth words={words} />
+      <div className="w-full max-w-screen-xl mx-auto px-5 py-3 space-y-5 z-20 flex flex-col items-center justify-center">
+        <TypewriterEffectSmooth words={contactHeading} />
 
-        <h2 className="text-muted-foreground">
-          Feel free to react out to me by sending an email. And I will respond
-          as soon as possible!
+        <h2 className="w-full max-w-xl text-center text-pretty text-sm lg:text-lg font-light">
+          {contactDesc}
         </h2>
+
+        <Link href="mailto:markguyadaez@gmail.com">
+          <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
+            Send an email <Send />
+          </Button>
+        </Link>
       </div>
-
-      <Button>Send an email</Button>
-
-      <h4 className="text-center">Thank you for visiting my page!</h4>
     </section>
   );
 }
