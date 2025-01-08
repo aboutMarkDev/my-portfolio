@@ -1,6 +1,8 @@
 import React from "react";
 import { useSectionContext } from "@/context/SectionContext";
 import { skillDesc, skills, technologies } from "@/constants";
+import { TypewritingEffect } from "./ui/section-title-effect";
+import { motion } from "motion/react";
 
 export default function Skills() {
   const { sectionRefs } = useSectionContext();
@@ -13,26 +15,70 @@ export default function Skills() {
       <header className="sticky-header">Skills</header>
 
       <div className="text-center space-y-3">
-        <h1 className="text-4xl font-semibold max-lg:hidden">Skills</h1>
-        <p className="section-desc">{skillDesc}</p>
+        {/* <h1 className="text-4xl font-semibold max-lg:hidden">Skills</h1> */}
+        <TypewritingEffect
+          text="Skills"
+          className="text-4xl text-semibold max-lg:hidden"
+        />
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="section-desc"
+        >
+          {skillDesc}
+        </motion.p>
       </div>
 
-      <div className="flex flex-wrap gap-3 justify-center w-full max-w-4xl mx-auto">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.2 } },
+        }}
+        viewport={{ once: true }}
+        className="flex flex-wrap gap-3 justify-center w-full max-w-4xl mx-auto"
+      >
         {technologies.map((tech, i) => (
-          <div key={i} className="technologies-card">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0 },
+              visible: { opacity: 1, scale: 1 },
+            }}
+            key={i}
+            className="technologies-card"
+          >
             {tech}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="w-full max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-3">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.5 } },
+        }}
+        viewport={{ once: true }}
+        className="w-full max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-3"
+      >
         {skills.map((item, i) => (
-          <div key={i} className="skill-card">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0 },
+              visible: { opacity: 1, scale: 1 },
+            }}
+            key={i}
+            className="skill-card"
+          >
             <h3 className="skill-card-title">{item.title}</h3>
             <div className="skill-card-quote">{item.quote}</div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

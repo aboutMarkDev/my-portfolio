@@ -70,8 +70,8 @@ export const projects = [
 ];
 
 export const role = [
-  "Software Engineer",
   "Full Stack Web Developer",
+  "Software Engineer",
   "Tech Enthusiast",
 ];
 

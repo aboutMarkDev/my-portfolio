@@ -1,10 +1,17 @@
 import { socials } from "@/constants";
 import Link from "next/link";
 import React from "react";
+import { motion } from "motion/react";
 
 export default function Footer() {
   return (
-    <footer className="px-3 lg:px-10 py-8 flex items-center justify-between">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="px-3 lg:px-10 py-8 flex items-center justify-between"
+    >
       <h1 className="text-muted-foreground font-medium max-md:text-sm">
         &copy; 2024 Mark Laurence Guyada
       </h1>
@@ -21,6 +28,6 @@ export default function Footer() {
           </Link>
         ))}
       </div>
-    </footer>
+    </motion.footer>
   );
 }

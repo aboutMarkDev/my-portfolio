@@ -7,6 +7,8 @@ import { Button } from "./ui/button";
 import Icons from "./Icons";
 import { projectDesc, projects } from "@/constants";
 import { createRef, useEffect, useMemo, useState } from "react";
+import { TypewritingEffect } from "./ui/section-title-effect";
+import { motion } from "motion/react";
 
 export default function Projects() {
   const { sectionRefs } = useSectionContext();
@@ -56,16 +58,47 @@ export default function Projects() {
       <header className="sticky-header">Recent Projects</header>
 
       <div className="text-center space-y-3">
-        <h1 className="text-4xl max-lg:hidden font-semibold">
+        {/* <h1 className="text-4xl max-lg:hidden font-semibold">
           Recent Projects
-        </h1>
-        <h4 className="section-desc">{projectDesc}</h4>
+        </h1> */}
+
+        <TypewritingEffect
+          text="Recent Projects"
+          className="text-4xl font-semibold max-lg:hidden"
+          duration={0.1}
+        />
+
+        <motion.h4
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="section-desc"
+        >
+          {projectDesc}
+        </motion.h4>
       </div>
 
-      <div className="project-container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.3, delayChildren: 0.5 } },
+        }}
+        viewport={{ once: true }}
+        className="project-container"
+      >
         {projects.map((project, i) => {
           return (
-            <div key={i} className="project-card">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, filter: "blur(5px)" },
+                visible: { opacity: 1, filter: "blur(0px)" },
+              }}
+              key={i}
+              className="project-card"
+            >
               {/* Project Image */}
               <Link
                 href={project.link}
@@ -148,10 +181,10 @@ export default function Projects() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

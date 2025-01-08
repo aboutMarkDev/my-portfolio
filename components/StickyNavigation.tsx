@@ -12,14 +12,19 @@ export default function StickyNavigation() {
   return (
     <section className="h-screen flex items-center justify-center sticky top-0 max-lg:hidden px-5 bg-[#001712]">
       <nav>
-        <ul className="space-y-3">
-          {navigation.map((navItem, i) => (
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="space-y-3"
+        >
+          {navigation.map((navItem) => (
             <li key={navItem.name} className="flex justify-end">
               <Link
                 href={navItem.href}
                 className={`${
                   currentSection === navItem.identifier && "text-emerald-400"
-                } font-semibold uppercase transition-colors duration-200 delay-75`}
+                } font-semibold uppercase transition-colors duration-200 delay-75 hover:text-emerald-400`}
               >
                 {navItem.name}
                 <motion.div
@@ -35,7 +40,7 @@ export default function StickyNavigation() {
               </Link>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </nav>
     </section>
   );
