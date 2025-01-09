@@ -41,7 +41,7 @@ export default function Contact() {
       {/* Radial gradient faded look */}
       <div className="bg-faded" />
 
-      <div className="w-full max-w-screen-xl mx-auto px-5 py-3 z-20 flex flex-col items-center justify-center">
+      <div className="w-full max-w-screen-xl mx-auto px-5 py-3 z-20 flex flex-col items-center justify-center overflow-hidden">
         <TypewriterEffectSmooth words={contactHeading} />
 
         <motion.div
