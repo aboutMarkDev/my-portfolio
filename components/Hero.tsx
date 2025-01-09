@@ -5,6 +5,7 @@ import { useSectionContext } from "@/context/SectionContext";
 import { FlipWords } from "./ui/flip-words";
 import { Button } from "./ui/button";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function Hero() {
   const { sectionRefs } = useSectionContext();
@@ -34,9 +35,11 @@ export default function Hero() {
 
         <h3 className="bio">{bio}</h3>
 
-        <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
-          View my Resume
-        </Button>
+        <Link href="/file/sample.pdf">
+          <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
+            View my Resume
+          </Button>
+        </Link>
       </motion.div>
 
       <motion.div
