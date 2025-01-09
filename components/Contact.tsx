@@ -34,14 +34,14 @@ export default function Contact() {
 
   return (
     <section
-      className="py-8 space-y-8 relative min-h-[36rem] flex items-center justify-center bg-dot-white/[0.2]"
+      className="py-8 space-y-8 relative min-h-[36rem] flex items-center justify-center bg-dot-white/[0.2] overflow-hidden"
       id="contact"
       ref={sectionRefs[3]}
     >
       {/* Radial gradient faded look */}
       <div className="bg-faded" />
 
-      <div className="w-full max-w-screen-xl mx-auto px-5 py-3 z-20 flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-full max-w-screen-xl mx-auto px-5 py-3 z-20 flex flex-col items-center justify-center overflow-x-hidden">
         <TypewriterEffectSmooth words={contactHeading} />
 
         <motion.div
