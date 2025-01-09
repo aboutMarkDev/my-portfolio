@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Domine, Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Domine, Inter } from "next/font/google";
 import "./globals.css";
 
 const domine = Domine({

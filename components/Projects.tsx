@@ -18,7 +18,7 @@ export default function Projects() {
 
   const descRef = useMemo(
     () => projects.map(() => createRef<HTMLHeadingElement | null>()),
-    [projects]
+    []
   );
 
   // To store the name of the project if the user clicks the see more
