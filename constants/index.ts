@@ -71,7 +71,7 @@ export const projects = [
 
 export const role = [
   "Full Stack Web Developer",
-  "Software Engineer",
+  "Software Developer",
   "Tech Enthusiast",
 ];
 
@@ -146,14 +146,15 @@ export const technologies = [
   "CSS",
   "JavaScript",
   "TypeScript",
-  "Python",
-  "PHP",
-  "ReactJs",
-  "NextJs",
-  "ExpressJs",
-  "NodeJs",
+  "React",
+  "Next.js",
+  "Express",
+  "Node.js",
+  "Git",
   "MongoDB",
   "PostgreSQL",
+  "MySQL",
+  "Prisma",
   "Firebase",
   "Appwrite",
 ];

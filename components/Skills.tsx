@@ -39,7 +39,7 @@ export default function Skills() {
           visible: { transition: { staggerChildren: 0.2 } },
         }}
         viewport={{ once: true }}
-        className="flex flex-wrap gap-3 justify-center w-full max-w-4xl mx-auto"
+        className="flex flex-wrap gap-3 justify-center w-full max-w-4xl mx-auto px-3"
       >
         {technologies.map((tech, i) => (
           <motion.div

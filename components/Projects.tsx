@@ -58,10 +58,6 @@ export default function Projects() {
       <header className="sticky-header">Recent Projects</header>
 
       <div className="text-center space-y-3">
-        {/* <h1 className="text-4xl max-lg:hidden font-semibold">
-          Recent Projects
-        </h1> */}
-
         <TypewritingEffect
           text="Recent Projects"
           className="text-4xl font-semibold max-lg:hidden"
@@ -103,7 +99,7 @@ export default function Projects() {
               <Link
                 href={project.link}
                 target="_blank"
-                className="h-[12rem] overflow-hidden border-b border-[#479281]/70 relative group"
+                className="h-[7rem] md:h-[8rem] lg:h-[10rem] xl:h-[12rem] overflow-hidden border-b border-[#479281]/70 relative group"
               >
                 <Image
                   src={project.image}
@@ -117,15 +113,15 @@ export default function Projects() {
               </Link>
 
               {/* Project Title and Description */}
-              <div className="flex flex-col justify-between min-h-[18rem]">
+              <div className="flex flex-col justify-between min-h-[14rem] md:min-h-[15rem] lg:min-h-[17rem] xl:min-h-[18rem]">
                 <div className="space-y-1 flex-1 px-5 pt-2">
-                  <h1 className="text-lg font-medium whitespace-nowrap overflow-hidden text-ellipsis">
+                  <h1 className="text-sm md:text-base lg:text-lg font-medium whitespace-nowrap overflow-hidden text-ellipsis">
                     {project.title}
                   </h1>
                   <p
                     ref={descRef[i]}
                     id={`${i}`}
-                    className={`indent-3 text-pretty text-sm font-light ${
+                    className={`indent-3 text-pretty text-xs lg:text-sm font-light ${
                       expandedList.has(project.name)
                         ? "line-clamp-none"
                         : "line-clamp-5"
@@ -174,7 +170,7 @@ export default function Projects() {
                     <Link
                       href={project.link}
                       target="_blank"
-                      className="after:content-['_↗'] text-emerald-300"
+                      className="after:content-['_↗'] text-emerald-300 text-xs md:text-sm lg:text-base"
                     >
                       Check Live Demo
                     </Link>

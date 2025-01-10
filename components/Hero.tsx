@@ -35,7 +35,7 @@ export default function Hero() {
 
         <h3 className="bio">{bio}</h3>
 
-        <Link href="/file/sample.pdf">
+        <Link href="/file/mark-laurence-guyada-resume.pdf">
           <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
             View my Resume
           </Button>
@@ -51,7 +51,10 @@ export default function Hero() {
       >
         <header className="sticky-header">About Me</header>
         {aboutMe.map((about, i) => (
-          <div key={i} className="px-5 indent-2 max-lg:text-sm text-pretty">
+          <div
+            key={i}
+            className="px-5 indent-2 max-lg:text-sm text-pretty text-foreground/90"
+          >
             {about}
           </div>
         ))}

@@ -51,7 +51,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center space-y-5"
         >
-          <h2 className="w-full max-w-xl text-center text-pretty text-sm lg:text-lg font-light">
+          <h2 className="w-full max-w-xl text-center text-pretty text-xs md:text-sm lg:text-lg font-light">
             {contactDesc}
           </h2>
 

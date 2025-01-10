@@ -12,7 +12,7 @@ export default function Footer() {
       viewport={{ once: true }}
       className="px-3 lg:px-10 py-8 flex max-sm:flex-col max-sm:justify-center items-center justify-between gap-3"
     >
-      <h1 className="text-muted-foreground font-medium max-md:text-sm">
+      <h1 className="text-muted-foreground font-light lg:font-medium max-md:text-sm">
         &copy; 2024 Mark Laurence Guyada
       </h1>
 
