@@ -35,7 +35,7 @@ export default function Hero() {
 
         <h3 className="bio">{bio}</h3>
 
-        <Link href="/file/mark-laurence-guyada-resume.pdf">
+        <Link href="/file/(Resume)-mark-laurence-guyada.pdf">
           <Button className="rounded-lg bg-[#00674f] hover:bg-foreground hover:text-[#00674f] text-foreground duration-200 delay-75">
             View my Resume
           </Button>
